@@ -6,7 +6,7 @@ const { auth } = require('../middlewares/auth.js');
 const router = express.Router();
 const upload = multer({ storage: multer.memoryStorage() });
 
-router.post("/upload", auth, upload.single("file"), uploadFile);
+router.post("/upload", upload.single("file"), uploadFile);
 router.delete('/deleteFile/:fileId', auth, deleteFile);
 router.post('/getFoldersByPath', auth, listFolders);
 router.post('/getFilesByPath', auth, getFilesByPath);
